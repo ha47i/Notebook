@@ -82,7 +82,7 @@ function showLoading(loading = true) {
 }
 
 function escapeHtml(str) { return str ? str.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m])) : ''; }
-function truncatePreview(text, maxLen = 100) {
+function truncatePreview(text, maxLen = 70) {
     if (!text) return '';
     return text.length <= maxLen ? text : text.slice(0, maxLen - 3) + '...';
 }
@@ -92,7 +92,7 @@ function getPreviewContent(item) {
     const rawContent = item.content ? decodeBase64(item.content) : "";
     if (!rawContent.trim()) return "— 无内容 —";
     const plain = rawContent.replace(/\n/g, ' ');
-    return truncatePreview(plain, 100);
+    return truncatePreview(plain, 70);
 }
 
 // 渲染卡片网格 (包含更新时间展示)
