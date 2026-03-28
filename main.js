@@ -3,9 +3,9 @@ let currentItems = [];       // 笔记对象: { name, content, created, updated 
 let editingIndex = -1;       // 当前正在编辑的索引，-1 表示新增模式
 let isNewMode = false;
 
-const DATA_URL = "https://luckyy.qzz.io/TextsDataBase/ulrgo/Notebook.txt";
+const DATA_URL = "https://luckyy.qzz.io/TextsDataBase/Notebook.json";
 const WRITE_API = "https://gh-editor.luckyy.qzz.io/write";
-const TARGET_FILE = "ulrgo/Notebook.txt";
+const TARGET_FILE = "Notebook.json";
 
 // DOM
 const cardsGrid = document.getElementById('cardsGrid');
