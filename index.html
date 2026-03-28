@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Notebook · 笔记系统</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="app-container">
+    <div class="header">
+        <div class="title">
+            <h1>快捷笔记本</h1>
+            <p>快速记录 · 随便记啥～</p>
+        </div>
+        <button class="theme-toggle" id="themeToggleBtn">🌓 深色模式</button>
+    </div>
+
+    <div class="api-bar">
+        <div class="api-field">
+            <label>🔑 API 密钥 X-API-Key</label>
+            <div class="api-input-row">
+                <div class="key-wrapper">
+                    <input type="password" id="apiKeyInput" placeholder="输入Key" autocomplete="off">
+                </div>
+                <label class="remember-switch">
+                    <input type="checkbox" id="rememberKeyCheckbox">
+                    <span>记住</span>
+                </label>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-buttons">
+                <button class="btn btn-secondary" id="refreshBtn">📄 重新加载</button>
+                <button class="btn btn-primary" id="uploadBtn">☁️ 上传保存</button>
+            </div>
+            <div class="status-chip" id="liveStatus">Loading...</div>
+        </div>
+    </div>
+
+    <div class="footer-msg" id="globalMessageContainer">
+        <div class="global-message">✨ 点击卡片编辑笔记，编辑完成后上传～</div>
+    </div>
+
+    <!-- 内联编辑面板 (增强: 显示创建/更新时间) -->
+    <div id="editorPanel" class="editor-panel">
+        <div class="panel-header">
+            <h3 id="panelTitle">编辑笔记</h3>
+            <button class="btn btn-secondary" id="closePanelBtn" style="padding:0.3rem 0.9rem;">✕ 取消</button>
+        </div>
+        <div id="panelError" class="panel-error"></div>
+        <div class="editor-field">
+            <label>标题 <span style="color:var(--text-secondary);">(可不填)</span></label>
+            <input type="text" id="editTitle" placeholder="未命名笔记" autocomplete="off">
+        </div>
+        <div class="editor-field">
+            <label>内容</label>
+            <textarea id="editContent" placeholder="写点什么..." rows="12"></textarea>
+        </div>
+        <!-- 显示创建和更新时间 -->
+        <div class="date-info">
+            <div><strong>创建日期：</strong><span id="displayCreated">—</span></div>
+            <div><strong>编辑日期：</strong><span id="displayUpdated">—</span></div>
+        </div>
+        <div class="editor-actions">
+            <button class="btn btn-secondary" id="cancelPanelBtn">取消</button>
+            <button class="btn btn-primary" id="savePanelBtn">保存</button>
+        </div>
+    </div>
+
+    <!-- 卡片网格 -->
+    <div id="cardsGrid" class="cards-grid"></div>
+
+    <footer class="app-footer">
+        <p>本页面由IceLiuli编写，笔记内容公开.</p>
+    </footer>
+</div>
+<script src="./main.js" defer></script>
+</body>
+</html>
