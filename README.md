@@ -11,4 +11,4 @@ worker变量：
 | GITHUB_REPO | TextsDataBase 仓库名 |
 | GITHUB_BRANCH | main | 可选，默认 main |
 | GITHUB_TOKEN | github_pat_xxx... | 新版 Fine-grained Token |
-| VALID_API_KEYS | {"liuli":"default_user"} JSON 字符串 |
+| VALID_API_KEYS | {"liuli":"default_user"} | JSON 字符串 |
